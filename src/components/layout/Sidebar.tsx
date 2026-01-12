@@ -9,7 +9,8 @@ import {
   Shield, 
   Settings,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  ClipboardList
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +27,7 @@ const navItems: NavItem[] = [
   { icon: Search, label: "AI Search", id: "search" },
   { icon: Upload, label: "Ingestion", id: "upload" },
   { icon: Bot, label: "Agents", id: "agents", badge: 5 },
+  { icon: ClipboardList, label: "Agent Work Log", id: "worklog" },
   { icon: Shield, label: "Compliance", id: "compliance" },
   { icon: Settings, label: "Settings", id: "settings" },
 ];

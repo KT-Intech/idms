@@ -11,6 +11,7 @@ import { DocumentCategories } from "@/components/dashboard/DocumentCategories";
 import { AISearchPanel } from "@/components/search/AISearchPanel";
 import { DocumentUpload } from "@/components/upload/DocumentUpload";
 import { DocumentExplorer } from "@/components/documents/DocumentExplorer";
+import { AgentWorkLog } from "@/components/agents/AgentWorkLog";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Dashboard = () => (
@@ -85,6 +86,8 @@ const Index = () => {
         );
       case "upload":
         return <DocumentUpload />;
+      case "worklog":
+        return <AgentWorkLog />;
       case "agents":
         return (
           <div className="grid grid-cols-2 gap-6">
@@ -202,12 +205,15 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               className="mb-6"
             >
-              <h1 className="text-2xl font-bold text-foreground capitalize">{activeTab}</h1>
+              <h1 className="text-2xl font-bold text-foreground capitalize">
+                {activeTab === "worklog" ? "Agent Work Log" : activeTab}
+              </h1>
               <p className="text-sm text-muted-foreground">
                 {activeTab === "documents" && "Browse and manage all classified documents"}
                 {activeTab === "search" && "Search documents using natural language queries"}
                 {activeTab === "upload" && "Upload new documents for AI classification"}
                 {activeTab === "agents" && "Monitor AI agent activity and performance"}
+                {activeTab === "worklog" && "View agent processes performed for users in the organisation"}
                 {activeTab === "compliance" && "Review compliance status and audit logs"}
               </p>
             </motion.div>
