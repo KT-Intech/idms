@@ -1,0 +1,1 @@
+- Keep approval workflow and document assembly as client-side views within the existing tab-based app, because this project currently has no connected persistence service.
